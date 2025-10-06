@@ -1,0 +1,91 @@
+@mixin font-outfit($size: 14px, $weight: bold, $family: "Outfit") {
+  font-family: $family;
+  font-weight: $weight;
+  font-size: $size;
+}
+
+@mixin flex-column($display: flex, $direction: column) {
+  display: $display;
+  flex-direction: $direction;
+}
+
+:host {
+  display: flex;
+  justify-content: center;
+}
+
+.about-container {
+  @include flex-column();
+  align-items: center;
+  gap: 15px;
+  padding: 40px;
+  width: 100%;
+  .about-title {
+    @include font-outfit(50px);
+    width: 100%;
+  }
+  .about-content {
+    @include flex-column(flex, row);
+    gap: 15px;
+    width: 100%;
+    .about-content-title {
+      @include font-outfit();
+      width: 10%;
+    }
+    .about-content-sections {
+      @include flex-column();
+      width: 90%;
+      .section-1 {
+        @include flex-column(flex, row);
+        gap: 15px;
+        margin-bottom: 40px;
+        div {
+          @include font-outfit(18px);
+        }
+        span {
+          @include font-outfit(15px);
+        }
+      }
+      .section-2 {
+        margin-bottom: 40px;
+        div {
+          @include font-outfit(40px);
+        }
+      }
+      .section-3 {
+        @include flex-column(flex, row);
+        gap: 15px;
+        margin-bottom: 40px;
+      }
+      .section-4 {
+        @include flex-column();
+        gap: 15px;
+        div {
+          @include font-outfit(24px, medium, "Outfit");
+        }
+        dx-button {
+          width: max-content;
+          align-self: flex-start;
+          background-color: #ffc800;
+          ::ng-deep .dx-button-text {
+            font-family: "Outfit", sans-serif;
+            font-weight: bold;
+            line-height: 140%;
+            letter-spacing: 2%;
+          }
+        }
+      }
+    }
+  }
+}
+@media (min-width: 1280px) {
+}
+@media (min-width: 801px) and (max-width: 1279px) {
+}
+@media (max-width: 800px) {
+  .about-content,
+  .section-1,
+  .section-3 {
+    flex-direction: column !important;
+  }
+}

@@ -1,0 +1,90 @@
+.header-navigation {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 20px;
+
+  div:nth-child(1) {
+    font-family: "Caprasimo", cursive;
+    font-size: 30px;
+    line-height: 92%;
+    letter-spacing: -3%;
+    font-weight: normal;
+    cursor: pointer;
+  }
+  div:nth-child(2) {
+    a {
+      font-family: "Outfit", sans-serif;
+      font-size: 14px;
+      line-height: 140%;
+      letter-spacing: 2%;
+      font-weight: bold;
+      text-decoration: none;
+      color: black;
+    }
+    a:hover {
+      color: royalblue;
+    }
+  }
+  div:nth-child(2)::after {
+    content: "";
+  }
+
+  @media (max-width: 799px) {
+    div:nth-child(1) {
+      font-size: inherit;
+    }
+
+    div:nth-child(1)::before {
+      content: "O.B";
+      cursor: pointer;
+    }
+
+    div:nth-child(1) {
+      visibility: hidden;
+      position: relative;
+    }
+
+    div:nth-child(1)::before {
+      visibility: visible;
+      position: absolute;
+      left: 0;
+    }
+    div:nth-child(2) a {
+      display: none;
+    }
+
+    div:nth-child(2).show-links a {
+      display: block;
+    }
+
+    .menu-toggle {
+      font-size: 24px;
+      cursor: pointer;
+      display: flex;
+      justify-content: right;
+      text-align: center;
+      margin-bottom: 5px;
+    }
+  }
+
+  @media (min-width: 800px) {
+    div:nth-child(2) {
+      display: flex;
+      gap: 30px;
+    }
+
+    div:nth-child(2) a {
+      display: block;
+    }
+
+    .menu-toggle {
+      display: none;
+    }
+  }
+}
+
+hr {
+  color: black;
+  margin: 0px 20px 0px 20px;
+}

@@ -1,0 +1,138 @@
+@mixin font-outfit($size: 14px, $weight: bold, $family: "Outfit") {
+  font-family: $family;
+  font-weight: $weight;
+  font-size: $size;
+}
+
+@mixin flex-column($display: flex, $direction: column) {
+  display: $display;
+  flex-direction: $direction;
+}
+
+.home-container {
+  @include flex-column();
+  align-items: center;
+  .header-pictures {
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    ::ng-deep picture {
+      margin-bottom: 20px;
+    }
+  }
+  .header-content {
+    @include flex-column();
+    text-align: center;
+    padding: 0px 40px 40px 40px;
+    gap: 15px;
+
+    p {
+      @include font-outfit();
+      line-height: 140%;
+      letter-spacing: 2%;
+      margin: 0;
+    }
+    div {
+      @include font-outfit(40px);
+      line-height: 110%;
+      letter-spacing: -2.5%;
+    }
+    dx-button {
+      width: max-content;
+      align-self: center;
+      background-color: #ffc800;
+      ::ng-deep .dx-button-text {
+        font-family: "Outfit", sans-serif;
+        font-weight: bold;
+        line-height: 140%;
+        letter-spacing: 2%;
+      }
+    }
+  }
+  .content {
+    @include flex-column();
+    align-items: center;
+    gap: 40px;
+    .carrousel {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+    .action-info {
+      @include flex-column();
+      align-items: center;
+      text-align: center;
+      gap: 15px;
+      div:nth-child(1) {
+        @include font-outfit(50px);
+        line-height: 140%;
+        letter-spacing: -2%;
+      }
+      div:nth-child(2) {
+        @include font-outfit(16px, normal, "Outfit");
+        line-height: 140%;
+        letter-spacing: -2.5%;
+      }
+    }
+    hr {
+      color: black;
+      width: 100%;
+    }
+    .content-col-1,
+    .content-col-2,
+    .content-col-3 {
+      @include flex-column();
+      text-align: center;
+      gap: 15px;
+      div:nth-child(1) {
+        @include font-outfit(50px);
+      }
+      div:nth-of-type(2) {
+        @include font-outfit(50px);
+      }
+      div:nth-of-type(3) {
+        @include font-outfit(16px, normal, "Outfit");
+      }
+    }
+  }
+
+  .footer {
+    @include flex-column();
+    align-items: center;
+    padding: 40px;
+    gap: 15px;
+    div:nth-child(1) {
+      @include font-outfit();
+    }
+    div:nth-child(2) {
+      @include font-outfit(36px);
+      text-align: center;
+    }
+    dx-button {
+      width: max-content;
+      align-self: center;
+      background-color: #ffc800;
+      ::ng-deep .dx-button-text {
+        font-family: "Outfit", sans-serif;
+        font-weight: bold;
+        line-height: 140%;
+        letter-spacing: 2%;
+      }
+    }
+  }
+
+  @media (min-width: 801px) and (max-width: 1279px) {
+    .header-content,
+    .footer {
+      max-width: 600px;
+    }
+  }
+
+  @media (max-width: 800px) {
+    .header-content,
+    .footer,
+    .action-info {
+      max-width: 300px;
+    }
+  }
+}

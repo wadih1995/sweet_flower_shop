@@ -1,0 +1,187 @@
+@mixin font-outfit($size: 14px, $weight: bold, $family: "Outfit") {
+  font-family: $family;
+  font-weight: $weight;
+  font-size: $size;
+}
+
+@mixin flex-column($display: flex, $direction: column) {
+  display: $display;
+  flex-direction: $direction;
+}
+
+:host {
+  display: flex;
+  justify-content: center;
+}
+.gallery-container {
+  @include flex-column();
+  align-items: center;
+  gap: 15px;
+  padding: 40px;
+  width: 100%;
+  .gallery-title {
+    @include font-outfit(50px);
+    width: 100%;
+  }
+  .gallery-content {
+    @include flex-column();
+    width: 100%;
+    .section-1 {
+      @include flex-column(flex, row);
+      gap: 15px;
+      width: 100%;
+      margin-bottom: 40px;
+      .section-1-title {
+        width: 20%;
+        @include font-outfit();
+      }
+      .section-1-content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        justify-content: space-between;
+        width: 80%;
+        margin-bottom: 40px;
+        .section-1-content > div {
+          @include flex-column();
+        }
+      }
+    }
+    .section-2 {
+      @include flex-column(flex, row);
+      gap: 15px;
+      width: 100%;
+      margin-bottom: 40px;
+      .section-2-title {
+        @include font-outfit();
+        width: 20%;
+      }
+
+      .section-2-content {
+        @include flex-column();
+        width: 80%;
+        gap: 15px;
+      }
+
+      .section-2-content > div {
+        @include flex-column(flex, row);
+        gap: 15px;
+        width: calc(100% - 15px);
+        border-top: 1px solid black;
+        padding-top: 15px;
+
+        .section-2-header {
+          @include flex-column();
+          gap: 15px;
+          width: 50%;
+          div:nth-child(1) {
+            @include font-outfit();
+          }
+          div:nth-child(2) {
+            @include font-outfit(17px, normal, "Outfit");
+          }
+        }
+        picture {
+          width: 50%;
+        }
+      }
+    }
+    .section-3 {
+      @include flex-column();
+      align-items: center;
+      gap: 15px;
+      justify-content: center;
+      div:nth-child(1) {
+        @include font-outfit();
+      }
+      div:nth-child(2) {
+        @include font-outfit(40px);
+        text-align: center;
+      }
+
+      dx-button {
+        width: max-content;
+        align-self: center;
+        background-color: #ffc800;
+        ::ng-deep .dx-button-text {
+          font-family: "Outfit", sans-serif;
+          font-weight: bold;
+          line-height: 140%;
+          letter-spacing: 2%;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1280px) {
+  .section-1-content > div {
+    @include flex-column();
+    gap: 15px;
+    @include font-outfit(18px);
+    span {
+      font-size: 15px;
+      color: rgba(0, 0, 0, 0.6);
+    }
+    flex: 1 1 calc(33.333% - 15px);
+  }
+}
+
+@media (min-width: 801px) and (max-width: 1279px) {
+  .gallery-container {
+    max-width: 800px;
+  }
+  .section-1-title,
+  .section-2-title,
+  .section-1-content,
+  .section-2-content {
+    width: 100% !important;
+  }
+  .section-1,
+  .section-2 {
+    flex-direction: column !important;
+  }
+
+  .section-1-content > div {
+    display: flex;
+    flex-direction: column;
+
+    gap: 15px;
+    @include font-outfit(18px);
+    span {
+      font-size: 15px;
+      color: rgba(0, 0, 0, 0.6);
+    }
+    flex: 1 1 calc(50% - 15px);
+  }
+}
+
+@media (max-width: 800px) {
+  .gallery-container {
+    max-width: 400px;
+  }
+  .section-1-title,
+  .section-2-title,
+  .section-1-content,
+  .section-2-content,
+  .section-2-header {
+    width: 100% !important;
+  }
+  .section-1,
+  .section-2,
+  .section-2-content > div {
+    flex-direction: column !important;
+  }
+
+  .section-1-content > div {
+    @include flex-column();
+
+    gap: 15px;
+    @include font-outfit(18px);
+    span {
+      font-size: 15px;
+      color: rgba(0, 0, 0, 0.6);
+    }
+    flex: 1 1 100%;
+  }
+}

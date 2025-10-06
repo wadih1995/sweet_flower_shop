@@ -1,0 +1,141 @@
+<div class="home-container">
+  <div class="header-pictures">
+    <picture>
+      <source
+        srcset="../../../../assets/images/Blooms-logo.png"
+        media="(min-width: 1280px)"
+      />
+      <source
+        srcset="../../../../assets/images/Blooms-logo-1.png"
+        media="(min-width: 801px) and (max-width: 1279px)"
+      />
+      <img
+        src="../../../../assets/images/Blooms-logo-2.png"
+        style="display: block; margin: 0 auto"
+      />
+    </picture>
+
+    <picture>
+      <source
+        srcset="../../../../assets/images/blooms-header-image.png"
+        media="(min-width: 1280px)"
+      />
+      <source
+        srcset="../../../../assets/images/blooms-header-image-1.png"
+        media="(min-width: 801px) and (max-width: 1279px)"
+      />
+      <img
+        src="../../../../assets/images/blooms-header-image-2.png"
+        style="display: block; margin: 0 auto"
+      />
+    </picture>
+  </div>
+  <div class="header-content">
+    <p>Who We Are</p>
+    <div>
+      We're Our Blooms® and we're here to help you find your floral story.
+    </div>
+    <dx-button text="ABOUT US"></dx-button>
+  </div>
+
+  <div class="content">
+    <div class="carrousel">
+      <img *ngFor="let img of carrouselImages" [src]="img" />
+    </div>
+    <div class="action-info">
+      <div>What We Do</div>
+      <div>We bring a touch of that simple magic into your world.</div>
+    </div>
+    <hr />
+    <div class="content-col-1">
+      <div>1</div>
+      <picture>
+        <source
+          srcset="../../../../assets/images/home-col-1.png"
+          media="(min-width: 1280px)"
+        />
+        <source
+          srcset="../../../../assets/images/home-col-1-1.png"
+          media="(min-width: 801px) and (max-width: 1279px)"
+        />
+        <img
+          src="../../../../assets/images/home-col-1-2.png"
+          style="display: block; margin: 0 auto"
+        />
+      </picture>
+      <div>FLORAL INSTALLATIONS</div>
+      <div>Living art for homes, businesses, and events.</div>
+    </div>
+    <hr />
+    <div class="content-col-2">
+      <div>2</div>
+      <picture>
+        <source
+          srcset="../../../../assets/images/home-col-2.png"
+          media="(min-width: 1280px)"
+        />
+        <source
+          srcset="../../../../assets/images/home-col-2-1.png"
+          media="(min-width: 801px) and (max-width: 1279px)"
+        />
+        <img
+          src="../../../../assets/images/home-col-2-2.png"
+          style="display: block; margin: 0 auto"
+        />
+      </picture>
+      <div>NATIVE PLANT ARRANGEMENTS</div>
+      <div>
+        Whether it's a private retreat or a public space, we craft floral
+        experiences that bloom beyond expectations.
+      </div>
+    </div>
+    <hr />
+    <div class="content-col-3">
+      <div>3</div>
+      <picture>
+        <source
+          srcset="../../../../assets/images/home-col-3.png"
+          media="(min-width: 1280px)"
+        />
+        <source
+          srcset="../../../../assets/images/home-col-3-1.png"
+          media="(min-width: 801px) and (max-width: 1279px)"
+        />
+        <img
+          src="../../../../assets/images/home-col-3-2.png"
+          style="display: block; margin: 0 auto"
+        />
+      </picture>
+      <div>CUSTOM FLORAL CONCEPTS</div>
+      <div>
+        Your vision, our blooms. We build arrangements that are both personal
+        and exquisitely simple. Whether it's a private retreat or a public
+        space, we craft floral experiences that bloom beyond expectations.
+      </div>
+    </div>
+    <hr />
+    <div class="content-col-4">
+      <picture>
+        <source
+          srcset="../../../../assets/images/home-col-4.png"
+          media="(min-width: 1280px)"
+        />
+        <source
+          srcset="../../../../assets/images/home-col-4-1.png"
+          media="(min-width: 801px) and (max-width: 1279px)"
+        />
+        <img
+          src="../../../../assets/images/home-col-4-2.png"
+          style="display: block; margin: 0 auto"
+        />
+      </picture>
+    </div>
+  </div>
+  <div class="footer">
+    <div>Work with us</div>
+    <div>
+      Discover how we can add a touch of natural beauty to your next event.
+    </div>
+    <dx-button text="ABOUT US"></dx-button>
+  </div>
+</div>

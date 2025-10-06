@@ -1,0 +1,11 @@
+<div class="header-navigation">
+  <div (click)="backTo()">Our Blooms®</div>
+  <div class="menu" [class.show-links]="showLinks">
+    <span class="menu-toggle" (click)="toggleMenu()">⋮</span>
+
+    <a routerLink="/gallery">Gallery</a>
+    <a routerLink="/about">About</a>
+    <a routerLink="/contact">Contact</a>
+  </div>
+</div>
+<hr />

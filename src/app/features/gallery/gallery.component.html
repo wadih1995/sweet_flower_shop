@@ -1,0 +1,70 @@
+<div class="gallery-container">
+  <div class="gallery-title">Gallery</div>
+  <div class="gallery-content">
+    <div class="section-1">
+      <div class="section-1-title">SEASONAL ARRANGEMENTS</div>
+      <div class="section-1-content">
+        <div *ngFor="let section of gallerySections">
+          <div>
+            {{ section.title }} <span>{{ section.subTitle }}</span>
+          </div>
+
+          <picture>
+            <source
+              [srcset]="
+                '../../../../assets/images/' + section.baseName + '.png'
+              "
+              media="(min-width: 1280px)"
+            />
+            <source
+              [srcset]="
+                '../../../../assets/images/' + section.baseName + '-1.png'
+              "
+              media="(min-width: 801px) and (max-width: 1279px)"
+            />
+            <img
+              [src]="'../../../../assets/images/' + section.baseName + '-2.png'"
+            />
+          </picture>
+        </div>
+      </div>
+    </div>
+    <div class="section-2">
+      <div class="section-2-title">Services</div>
+      <div class="section-2-content">
+        <div *ngFor="let section of gallerySectionsTwo">
+          <div class="section-2-header">
+            <div>
+              {{ section.title }}
+            </div>
+            <div>{{ section.subTitle }}</div>
+          </div>
+          <picture>
+            <source
+              [srcset]="
+                '../../../../assets/images/' + section.baseName + '.png'
+              "
+              media="(min-width: 1280px)"
+            />
+            <source
+              [srcset]="
+                '../../../../assets/images/' + section.baseName + '-1.png'
+              "
+              media="(min-width: 801px) and (max-width: 1279px)"
+            />
+            <img
+              [src]="'../../../../assets/images/' + section.baseName + '-2.png'"
+            />
+          </picture>
+        </div>
+      </div>
+    </div>
+    <div class="section-3">
+      <div>Work with us</div>
+      <div>
+        Discover how we can add a touch of natural beauty to your next event.
+      </div>
+      <dx-button text="ABOUT US"></dx-button>
+    </div>
+  </div>
+</div>
