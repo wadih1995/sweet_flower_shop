@@ -120,19 +120,18 @@
       }
     }
   }
+}
+@media (min-width: 801px) and (max-width: 1279px) {
+}
 
-  @media (min-width: 801px) and (max-width: 1279px) {
-    .header-content,
-    .footer {
-      max-width: 600px;
-    }
+@media (max-width: 800px) {
+  div:nth-of-type(2) {
+    font-size: 18px !important;
   }
-
-  @media (max-width: 800px) {
-    .header-content,
-    .footer,
-    .action-info {
-      max-width: 300px;
-    }
+  div:nth-of-type(3) {
+    font-size: 16px !important;
+  }
+  .header-pictures {
+    padding: 0px !important;
   }
 }

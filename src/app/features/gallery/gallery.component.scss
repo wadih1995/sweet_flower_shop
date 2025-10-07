@@ -17,8 +17,8 @@
   @include flex-column();
   align-items: center;
   gap: 15px;
-  padding: 40px;
   width: 100%;
+  padding: 40px;
   .gallery-title {
     @include font-outfit(50px);
     width: 100%;
@@ -91,6 +91,7 @@
       align-items: center;
       gap: 15px;
       justify-content: center;
+      margin-bottom: 40px;
       div:nth-child(1) {
         @include font-outfit();
       }
@@ -128,9 +129,6 @@
 }
 
 @media (min-width: 801px) and (max-width: 1279px) {
-  .gallery-container {
-    max-width: 800px;
-  }
   .section-1-title,
   .section-2-title,
   .section-1-content,
@@ -158,19 +156,24 @@
 
 @media (max-width: 800px) {
   .gallery-container {
-    max-width: 400px;
+    text-align: center;
+    padding: 0px !important;
   }
   .section-1-title,
   .section-2-title,
   .section-1-content,
   .section-2-content,
-  .section-2-header {
+  .section-2-header,
+  picture {
     width: 100% !important;
   }
   .section-1,
   .section-2,
   .section-2-content > div {
     flex-direction: column !important;
+  }
+  .section-2-content > div {
+    align-items: center;
   }
 
   .section-1-content > div {

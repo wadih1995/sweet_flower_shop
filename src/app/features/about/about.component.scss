@@ -60,6 +60,7 @@
       .section-4 {
         @include flex-column();
         gap: 15px;
+        margin-bottom: 40px;
         div {
           @include font-outfit(24px, medium, "Outfit");
         }
@@ -87,5 +88,8 @@
   .section-1,
   .section-3 {
     flex-direction: column !important;
+  }
+  .about-container {
+    padding: 0px !important;
   }
 }
